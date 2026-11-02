@@ -4,6 +4,8 @@ This companion to the Authority Canvas implements an approval boundary for two f
 
 The version 1.0 stateless exercise is retained unchanged at the repository root. This lab adds a local approval ledger, authenticated approval artifacts, revocation, version checks, atomic consumption and an audit chain. It is a teaching reference with material AI assistance, not a production service, independent security review, or claim of a new authorization technique.
 
+Created by an AI coding assistant during development of Shrikar Nag’s website. The implementation and automated checks were generated and run through that workflow. Publication on his website and account identifies the project’s host; it does not attribute the implementation or testing to him.
+
 ## Run
 
 Use Python 3.11 or later with its standard `sqlite3` module. No dependencies, model, API key, network connection, installation, or external account is needed.
