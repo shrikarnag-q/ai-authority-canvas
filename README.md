@@ -1,10 +1,19 @@
-# AI Authority Canvas reference exercise
+# AI Authority Canvas teaching references
 
 A small teaching exercise for discussing the boundary between an AI recommendation and an authorized action. It accompanies [Shrikar Nag's browser planning worksheet](https://www.shrikarnag.com/authority-canvas/).
 
-The repository contains a Python decision simulation, 27 synthetic fixtures, a recorded run, and a practitioner review kit. It performs no real action, calls no model, uses no credentials, and needs only the Python standard library.
+The repository contains a Python decision simulation, 27 synthetic fixtures, a recorded run, and a practitioner review kit. It also includes an [approval execution lab](lab/) that enforces approvals for fictional SQLite changes and tests replay, revocation, concurrent reuse and transaction failure. Neither reference calls a model, uses real credentials, or connects to a customer system. Both use only the Python standard library.
 
-## Run the exercise
+## Approval execution lab
+
+```sh
+python3 lab/demo.py
+python3 lab/run_checks.py --output lab/reproduced-checks.json
+```
+
+The [lab documentation](lab/README.md) explains its trust boundary, threat cases and limitations. It uses a local approval ledger and HMAC-authenticated artifacts bound to exact actions. A scripted reviewer stands in for a real human; authentication and consent collection are not implemented. Atomic execution applies only to the fictional database transaction. The [recorded test run](lab/check-results.json) includes source hashes and individual outcomes. These author-defined checks are not independent validation or evidence of deployment, novelty or industry impact.
+
+## Run the version 1.0 stateless exercise
 
 ```sh
 python3 authority-reference.py > reproduced-evaluation.json
@@ -27,7 +36,7 @@ Use Python 3.9 or later. The reference uses a fixed fixture time of November 2, 
 
 The classifications are choices for this exercise, not universal risk categories. Inspect each fixture and its expected decision before deciding whether the example fits another environment.
 
-## What it does not implement
+## What the version 1.0 stateless exercise does not implement
 
 The `identity_bound` field is a stand-in. The reference does not authenticate an actor or approver. Caller-supplied action identifiers and versions do not establish binding to real resources or exact tool parameters.
 
