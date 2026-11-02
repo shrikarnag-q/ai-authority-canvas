@@ -361,7 +361,12 @@ class AuthorityLab:
         db.execute("INSERT INTO audit VALUES (?,?,?)", (sequence, body, mac))
 
     def verify_audit(self, checkpoint=None):
-        """A trusted external checkpoint is needed to detect deletion of the tail."""
+        """Check the chain, optionally against an exact expected current snapshot.
+
+        A prior checkpoint does not accept legitimate later appends: it returns
+        checkpoint_mismatch. This API does not verify anchored-prefix extension.
+        Retain the expected current snapshot elsewhere to detect tail deletion.
+        """
         with self._connection() as db:
             rows = db.execute("SELECT sequence,body,mac FROM audit ORDER BY sequence").fetchall()
         head = "0" * 64
