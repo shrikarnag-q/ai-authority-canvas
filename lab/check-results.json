@@ -1,0 +1,198 @@
+{
+  "version": "1.1.0-lab",
+  "scope": "Author-defined synthetic local tests; not independent validation, production security, novelty, adoption or business impact.",
+  "python": "3.12.14",
+  "sqlite": "3.53.1",
+  "operating_system": "Darwin",
+  "architecture": "arm64",
+  "source_sha256": {
+    "authority_lab.py": "03e8fc525e4b11fdf7baf94afa82ddc16543a83b8d1c5a43515b02587810988b",
+    "test_authority_lab.py": "5d4479ffac0e2aa38bc2b06e5f9645c2c0d4033e50e1b7c74222da5320e10421",
+    "run_checks.py": "c285e27a50a398c5b950e377cb2fc25423551573108896c377bc8bc0035c7bfc"
+  },
+  "checks_run": 45,
+  "passed": 45,
+  "successful": true,
+  "results": [
+    {
+      "check": "test_authority_lab.AuthorityTests.test_abrupt_process_exit_before_commit_rolls_back",
+      "status": "passed"
+    },
+    {
+      "check": "test_authority_lab.AuthorityTests.test_agent_cannot_approve",
+      "status": "passed"
+    },
+    {
+      "check": "test_authority_lab.AuthorityTests.test_agent_cannot_change_trusted_policy",
+      "status": "passed"
+    },
+    {
+      "check": "test_authority_lab.AuthorityTests.test_approved_flag_does_not_grant_authority",
+      "status": "passed"
+    },
+    {
+      "check": "test_authority_lab.AuthorityTests.test_approved_note_commits_once",
+      "status": "passed"
+    },
+    {
+      "check": "test_authority_lab.AuthorityTests.test_approver_cannot_execute_as_agent",
+      "status": "passed"
+    },
+    {
+      "check": "test_authority_lab.AuthorityTests.test_audit_detects_modified_record",
+      "status": "passed"
+    },
+    {
+      "check": "test_authority_lab.AuthorityTests.test_audit_does_not_copy_note_contents_or_token_mac",
+      "status": "passed"
+    },
+    {
+      "check": "test_authority_lab.AuthorityTests.test_audit_failure_rolls_back_mutation_and_consumption",
+      "status": "passed"
+    },
+    {
+      "check": "test_authority_lab.AuthorityTests.test_changed_actor_rejected",
+      "status": "passed"
+    },
+    {
+      "check": "test_authority_lab.AuthorityTests.test_changed_parameters_rejected_without_burning_approval",
+      "status": "passed"
+    },
+    {
+      "check": "test_authority_lab.AuthorityTests.test_changed_target_rejected",
+      "status": "passed"
+    },
+    {
+      "check": "test_authority_lab.AuthorityTests.test_changed_tool_rejected",
+      "status": "passed"
+    },
+    {
+      "check": "test_authority_lab.AuthorityTests.test_clock_before_issuance_rejected",
+      "status": "passed"
+    },
+    {
+      "check": "test_authority_lab.AuthorityTests.test_context_change_invalidates_approval",
+      "status": "passed"
+    },
+    {
+      "check": "test_authority_lab.AuthorityTests.test_duplicate_json_parameter_rejected",
+      "status": "passed"
+    },
+    {
+      "check": "test_authority_lab.AuthorityTests.test_exact_approved_budget_commits",
+      "status": "passed"
+    },
+    {
+      "check": "test_authority_lab.AuthorityTests.test_expired_token_rejected_at_exact_boundary",
+      "status": "passed"
+    },
+    {
+      "check": "test_authority_lab.AuthorityTests.test_invalid_ttl_rejected",
+      "status": "passed"
+    },
+    {
+      "check": "test_authority_lab.AuthorityTests.test_malformed_versions_rejected",
+      "status": "passed"
+    },
+    {
+      "check": "test_authority_lab.AuthorityTests.test_missing_token_does_not_execute",
+      "status": "passed"
+    },
+    {
+      "check": "test_authority_lab.AuthorityTests.test_non_ascii_mac_rejected_safely",
+      "status": "passed"
+    },
+    {
+      "check": "test_authority_lab.AuthorityTests.test_noninteger_and_extra_parameters_rejected",
+      "status": "passed"
+    },
+    {
+      "check": "test_authority_lab.AuthorityTests.test_other_agent_cannot_use_bearer_token",
+      "status": "passed"
+    },
+    {
+      "check": "test_authority_lab.AuthorityTests.test_other_tenant_cannot_issue_approval",
+      "status": "passed"
+    },
+    {
+      "check": "test_authority_lab.AuthorityTests.test_other_tenant_cannot_revoke_approval",
+      "status": "passed"
+    },
+    {
+      "check": "test_authority_lab.AuthorityTests.test_other_tenant_cannot_use_token",
+      "status": "passed"
+    },
+    {
+      "check": "test_authority_lab.AuthorityTests.test_policy_change_invalidates_approval",
+      "status": "passed"
+    },
+    {
+      "check": "test_authority_lab.AuthorityTests.test_policy_limit_blocks_issuance",
+      "status": "passed"
+    },
+    {
+      "check": "test_authority_lab.AuthorityTests.test_preview_detaches_mutable_parameter_input",
+      "status": "passed"
+    },
+    {
+      "check": "test_authority_lab.AuthorityTests.test_reordered_keys_have_same_binding",
+      "status": "passed"
+    },
+    {
+      "check": "test_authority_lab.AuthorityTests.test_replay_rejected",
+      "status": "passed"
+    },
+    {
+      "check": "test_authority_lab.AuthorityTests.test_revocation_execution_race_has_serial_outcome",
+      "status": "passed"
+    },
+    {
+      "check": "test_authority_lab.AuthorityTests.test_revoked_approval_rejected",
+      "status": "passed"
+    },
+    {
+      "check": "test_authority_lab.AuthorityTests.test_revoked_approver_role_invalidates_token",
+      "status": "passed"
+    },
+    {
+      "check": "test_authority_lab.AuthorityTests.test_revoked_executor_role_rejected",
+      "status": "passed"
+    },
+    {
+      "check": "test_authority_lab.AuthorityTests.test_separate_approval_with_stale_resource_rejected",
+      "status": "passed"
+    },
+    {
+      "check": "test_authority_lab.AuthorityTests.test_sixteen_concurrent_uses_commit_exactly_one_local_mutation",
+      "status": "passed"
+    },
+    {
+      "check": "test_authority_lab.AuthorityTests.test_stop_and_resume_require_new_approval",
+      "status": "passed"
+    },
+    {
+      "check": "test_authority_lab.AuthorityTests.test_tail_deletion_requires_external_checkpoint",
+      "status": "passed"
+    },
+    {
+      "check": "test_authority_lab.AuthorityTests.test_token_mac_tampering_rejected",
+      "status": "passed"
+    },
+    {
+      "check": "test_authority_lab.AuthorityTests.test_unknown_approval_even_with_valid_mac_rejected",
+      "status": "passed"
+    },
+    {
+      "check": "test_authority_lab.AuthorityTests.test_unknown_principal_rejected",
+      "status": "passed"
+    },
+    {
+      "check": "test_authority_lab.AuthorityTests.test_unknown_resource_cannot_be_prepared",
+      "status": "passed"
+    },
+    {
+      "check": "test_authority_lab.AuthorityTests.test_unknown_tool_and_invalid_identifiers_rejected",
+      "status": "passed"
+    }
+  ]
+}

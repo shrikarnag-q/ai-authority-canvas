@@ -1,0 +1,25 @@
+name: Reference checks
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  synthetic-checks:
+    runs-on: ubuntu-24.04
+    strategy:
+      fail-fast: false
+      matrix:
+        python: ['3.11', '3.12', '3.13', '3.14']
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1, verified 2026-11-02
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0, verified 2026-11-02
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Exercise the local transaction boundary
+        run: python lab/run_checks.py --output /tmp/authority-lab-checks.json
+      - name: Preserve the version 1.0 exercise
+        run: python authority-reference.py > /tmp/authority-v1-checks.json
