@@ -1,0 +1,55 @@
+{
+  "status": "uncompleted_template",
+  "review_kind": "Technical critique of a fictional local teaching lab",
+  "artifact": {
+    "name": "AI Authority Canvas approval execution lab",
+    "lab_version": "1.1.0",
+    "source_commit": null,
+    "reviewed_url": null
+  },
+  "review_date": null,
+  "reviewer": {
+    "name_or_handle": null,
+    "role": null,
+    "affiliation": null,
+    "relationship_to_author_or_project": null,
+    "compensation_or_other_incentives": null
+  },
+  "environment": {
+    "python_version": null,
+    "sqlite_version": null,
+    "operating_system": null
+  },
+  "scope": {
+    "files_inspected": [],
+    "author_checks_executed": null,
+    "independently_designed_scenario_executed": null,
+    "untested": []
+  },
+  "observations": [],
+  "observation_fields": [
+    "claim_examined",
+    "expected_property",
+    "initial_fictional_state",
+    "minimal_reproduction",
+    "executed_or_inspection_only",
+    "observed_output",
+    "final_fictional_state",
+    "interpretation",
+    "suggested_correction",
+    "limits"
+  ],
+  "publication_permission": {
+    "private_feedback_quotation_granted": false,
+    "exact_approved_quote": null,
+    "name_and_affiliation_use_granted": false,
+    "approved_destination_and_context": null,
+    "permission_record": null
+  },
+  "owner_response": {
+    "corrections": [],
+    "correction_commit": null,
+    "unresolved_findings": []
+  },
+  "interpretation_limit": "This blank form records no completed review, endorsement, deployment, standard conformance, certification, novelty or industry impact."
+}
