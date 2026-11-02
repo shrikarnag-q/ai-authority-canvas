@@ -11,7 +11,7 @@ python3 lab/demo.py
 python3 lab/run_checks.py --output lab/reproduced-checks.json
 ```
 
-The [lab documentation](lab/README.md) explains its trust boundary, threat cases and limitations. It uses a local approval ledger and HMAC-authenticated artifacts bound to exact actions. A scripted reviewer stands in for a real human; authentication and consent collection are not implemented. Atomic execution applies only to the fictional database transaction. The [recorded test run](lab/check-results.json) includes source hashes and individual outcomes. These author-defined checks are not independent validation or evidence of deployment, novelty or industry impact.
+The [lab documentation](lab/README.md) explains its trust boundary, threat cases and limitations. It uses a local approval ledger and HMAC-authenticated artifacts bound to exact actions. A scripted reviewer stands in for a real human; authentication and consent collection are not implemented. Atomic execution applies only to the fictional database transaction. The [recorded test run](lab/check-results.json) includes source hashes and individual outcomes. These author-defined checks are not independent validation or evidence of deployment, novelty or industry impact. The [lab review protocol](docs/lab-review-protocol.md) helps another engineer reproduce and challenge a specific claim.
 
 ## Run the version 1.0 stateless exercise
 
@@ -46,7 +46,9 @@ The fixtures and expected outcomes were prepared alongside the implementation wi
 
 ## Review the assumptions
 
-The [practitioner kit](docs/ai-authority-practitioner-review-kit.pdf) offers a 30-minute critique using four fictional cases. Its [editable record](docs/ai-authority-review-record-template.json) is uncompleted by default.
+For the version 1.1 execution lab, use the [technical review protocol](docs/lab-review-protocol.md) and [blank lab review record](docs/lab-review-record-template.json). They ask for the exact checkout, observed behavior, a small reproduction and review limits. No completed external review is currently claimed.
+
+For the version 1.0 stateless exercise and planning worksheet, the [practitioner kit](docs/ai-authority-practitioner-review-kit.pdf) offers a 30-minute critique using four fictional cases. Its [editable record](docs/ai-authority-review-record-template.json) is uncompleted by default.
 
 Concrete criticism is useful: identify an ambiguous instruction, an incorrect expected decision, or a misleading interpretation. Explain the action and context that would change your answer. Do not post private company information or sensitive records in a public issue.
 

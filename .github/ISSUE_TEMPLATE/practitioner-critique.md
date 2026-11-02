@@ -18,6 +18,10 @@ What was unclear or incorrect? Describe a fictional or public example. Do not in
 
 What would make the boundary clearer? Include a relevant primary source if one supports the correction.
 
+## Execution-lab reproduction, if applicable
+
+Use the [lab review protocol](https://github.com/shrikarnag-q/ai-authority-canvas/blob/codex/initial-release/docs/lab-review-protocol.md) if useful. Give the Python and SQLite versions, exact command or small synthetic script, initial state, expected result, observed result, and final state. Distinguish rerunning the author's checks from a scenario you designed. Mark anything you did not execute as untested.
+
 ## Scope of your review
 
 What did you inspect, and what did you leave untested? A review does not imply endorsement or production validation.
