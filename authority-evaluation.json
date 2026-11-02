@@ -1,0 +1,198 @@
+{
+  "version": "1.0",
+  "fixture_time": "2026-11-02T12:00:00+00:00",
+  "scope": "Synthetic decision scenarios only; matching expectations does not establish production security, performance, novelty, or real-world impact.",
+  "cases": 27,
+  "matched": 27,
+  "results": [
+    {
+      "case": "read-within-scope",
+      "expected": "permitted",
+      "actual": "permitted",
+      "reason": "Read or draft work within the declared low-impact scope",
+      "matched": true
+    },
+    {
+      "case": "draft-within-scope",
+      "expected": "permitted",
+      "actual": "permitted",
+      "reason": "Read or draft work within the declared low-impact scope",
+      "matched": true
+    },
+    {
+      "case": "internal-change-without-approval",
+      "expected": "approval_required",
+      "actual": "approval_required",
+      "reason": "A named human must approve this action",
+      "matched": true
+    },
+    {
+      "case": "external-commitment-without-approval",
+      "expected": "approval_required",
+      "actual": "approval_required",
+      "reason": "A named human must approve this action",
+      "matched": true
+    },
+    {
+      "case": "significant-draft-requires-review",
+      "expected": "approval_required",
+      "actual": "approval_required",
+      "reason": "A named human must approve this action",
+      "matched": true
+    },
+    {
+      "case": "matching-internal-approval",
+      "expected": "permitted",
+      "actual": "permitted",
+      "reason": "Matching simulated approval is current",
+      "matched": true
+    },
+    {
+      "case": "matching-external-approval",
+      "expected": "permitted",
+      "actual": "permitted",
+      "reason": "Matching simulated approval is current",
+      "matched": true
+    },
+    {
+      "case": "sensitive-data-outside-scope",
+      "expected": "blocked",
+      "actual": "blocked",
+      "reason": "Outside the supported demonstrator scope; specialist review required",
+      "matched": true
+    },
+    {
+      "case": "high-impact-outside-scope",
+      "expected": "blocked",
+      "actual": "blocked",
+      "reason": "Outside the supported demonstrator scope; specialist review required",
+      "matched": true
+    },
+    {
+      "case": "unknown-scope",
+      "expected": "blocked",
+      "actual": "blocked",
+      "reason": "Unknown scope, data class, or impact",
+      "matched": true
+    },
+    {
+      "case": "unknown-data-class",
+      "expected": "blocked",
+      "actual": "blocked",
+      "reason": "Unknown scope, data class, or impact",
+      "matched": true
+    },
+    {
+      "case": "unknown-impact",
+      "expected": "blocked",
+      "actual": "blocked",
+      "reason": "Unknown scope, data class, or impact",
+      "matched": true
+    },
+    {
+      "case": "missing-owner",
+      "expected": "blocked",
+      "actual": "blocked",
+      "reason": "Required action, owner, or version context is missing",
+      "matched": true
+    },
+    {
+      "case": "missing-action-id",
+      "expected": "blocked",
+      "actual": "blocked",
+      "reason": "Required action, owner, or version context is missing",
+      "matched": true
+    },
+    {
+      "case": "missing-version",
+      "expected": "blocked",
+      "actual": "blocked",
+      "reason": "Required action, owner, or version context is missing",
+      "matched": true
+    },
+    {
+      "case": "unbound-identity",
+      "expected": "blocked",
+      "actual": "blocked",
+      "reason": "No simulated identity binding",
+      "matched": true
+    },
+    {
+      "case": "missing-rationale",
+      "expected": "blocked",
+      "actual": "blocked",
+      "reason": "Required evidence is missing",
+      "matched": true
+    },
+    {
+      "case": "missing-source-time",
+      "expected": "blocked",
+      "actual": "blocked",
+      "reason": "Required evidence is missing",
+      "matched": true
+    },
+    {
+      "case": "stop-condition-raised",
+      "expected": "blocked",
+      "actual": "blocked",
+      "reason": "A stop condition has been raised",
+      "matched": true
+    },
+    {
+      "case": "wrong-action",
+      "expected": "approval_required",
+      "actual": "approval_required",
+      "reason": "Approval does not match the action and current versions",
+      "matched": true
+    },
+    {
+      "case": "changed-context",
+      "expected": "approval_required",
+      "actual": "approval_required",
+      "reason": "Approval does not match the action and current versions",
+      "matched": true
+    },
+    {
+      "case": "changed-policy",
+      "expected": "approval_required",
+      "actual": "approval_required",
+      "reason": "Approval does not match the action and current versions",
+      "matched": true
+    },
+    {
+      "case": "wrong-approver",
+      "expected": "approval_required",
+      "actual": "approval_required",
+      "reason": "The declared owner must review the action",
+      "matched": true
+    },
+    {
+      "case": "expired-approval",
+      "expected": "approval_required",
+      "actual": "approval_required",
+      "reason": "Approval is expired or has no timezone",
+      "matched": true
+    },
+    {
+      "case": "invalid-expiration",
+      "expected": "approval_required",
+      "actual": "approval_required",
+      "reason": "Approval has no valid expiration",
+      "matched": true
+    },
+    {
+      "case": "timezone-missing",
+      "expected": "approval_required",
+      "actual": "approval_required",
+      "reason": "Approval is expired or has no timezone",
+      "matched": true
+    },
+    {
+      "case": "human-rejection",
+      "expected": "blocked",
+      "actual": "blocked",
+      "reason": "Human approval was not granted",
+      "matched": true
+    }
+  ]
+}

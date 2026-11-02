@@ -1,0 +1,570 @@
+{
+  "notice": "All names, actions, approvals, and situations are synthetic test fixtures, not customer or deployment records.",
+  "scenarios": [
+    {
+      "id": "read-within-scope",
+      "request": {
+        "action_id": "recovery-plan-001",
+        "scope": "read",
+        "data": "internal",
+        "impact": "low",
+        "owner": "program-lead",
+        "context_version": "context-1",
+        "policy_version": "policy-1",
+        "identity_bound": true,
+        "evidence": {
+          "source_timestamp": "2026-11-02T11:50:00Z",
+          "rationale": "A synthetic supplier date changed."
+        }
+      },
+      "expected": "permitted"
+    },
+    {
+      "id": "draft-within-scope",
+      "request": {
+        "action_id": "recovery-plan-001",
+        "scope": "draft",
+        "data": "internal",
+        "impact": "low",
+        "owner": "program-lead",
+        "context_version": "context-1",
+        "policy_version": "policy-1",
+        "identity_bound": true,
+        "evidence": {
+          "source_timestamp": "2026-11-02T11:50:00Z",
+          "rationale": "A synthetic supplier date changed."
+        }
+      },
+      "expected": "permitted"
+    },
+    {
+      "id": "internal-change-without-approval",
+      "request": {
+        "action_id": "recovery-plan-001",
+        "scope": "internal",
+        "data": "internal",
+        "impact": "low",
+        "owner": "program-lead",
+        "context_version": "context-1",
+        "policy_version": "policy-1",
+        "identity_bound": true,
+        "evidence": {
+          "source_timestamp": "2026-11-02T11:50:00Z",
+          "rationale": "A synthetic supplier date changed."
+        }
+      },
+      "expected": "approval_required"
+    },
+    {
+      "id": "external-commitment-without-approval",
+      "request": {
+        "action_id": "recovery-plan-001",
+        "scope": "external",
+        "data": "internal",
+        "impact": "low",
+        "owner": "program-lead",
+        "context_version": "context-1",
+        "policy_version": "policy-1",
+        "identity_bound": true,
+        "evidence": {
+          "source_timestamp": "2026-11-02T11:50:00Z",
+          "rationale": "A synthetic supplier date changed."
+        }
+      },
+      "expected": "approval_required"
+    },
+    {
+      "id": "significant-draft-requires-review",
+      "request": {
+        "action_id": "recovery-plan-001",
+        "scope": "draft",
+        "data": "internal",
+        "impact": "significant",
+        "owner": "program-lead",
+        "context_version": "context-1",
+        "policy_version": "policy-1",
+        "identity_bound": true,
+        "evidence": {
+          "source_timestamp": "2026-11-02T11:50:00Z",
+          "rationale": "A synthetic supplier date changed."
+        }
+      },
+      "expected": "approval_required"
+    },
+    {
+      "id": "matching-internal-approval",
+      "request": {
+        "action_id": "recovery-plan-001",
+        "scope": "internal",
+        "data": "internal",
+        "impact": "low",
+        "owner": "program-lead",
+        "context_version": "context-1",
+        "policy_version": "policy-1",
+        "identity_bound": true,
+        "evidence": {
+          "source_timestamp": "2026-11-02T11:50:00Z",
+          "rationale": "A synthetic supplier date changed."
+        }
+      },
+      "expected": "permitted",
+      "approval": {
+        "action_id": "recovery-plan-001",
+        "context_version": "context-1",
+        "policy_version": "policy-1",
+        "approver": "program-lead",
+        "decision": "approve",
+        "expires_at": "2026-11-02T13:00:00Z"
+      }
+    },
+    {
+      "id": "matching-external-approval",
+      "request": {
+        "action_id": "recovery-plan-001",
+        "scope": "external",
+        "data": "internal",
+        "impact": "low",
+        "owner": "program-lead",
+        "context_version": "context-1",
+        "policy_version": "policy-1",
+        "identity_bound": true,
+        "evidence": {
+          "source_timestamp": "2026-11-02T11:50:00Z",
+          "rationale": "A synthetic supplier date changed."
+        }
+      },
+      "expected": "permitted",
+      "approval": {
+        "action_id": "recovery-plan-001",
+        "context_version": "context-1",
+        "policy_version": "policy-1",
+        "approver": "program-lead",
+        "decision": "approve",
+        "expires_at": "2026-11-02T13:00:00Z"
+      }
+    },
+    {
+      "id": "sensitive-data-outside-scope",
+      "request": {
+        "action_id": "recovery-plan-001",
+        "scope": "draft",
+        "data": "sensitive",
+        "impact": "low",
+        "owner": "program-lead",
+        "context_version": "context-1",
+        "policy_version": "policy-1",
+        "identity_bound": true,
+        "evidence": {
+          "source_timestamp": "2026-11-02T11:50:00Z",
+          "rationale": "A synthetic supplier date changed."
+        }
+      },
+      "expected": "blocked"
+    },
+    {
+      "id": "high-impact-outside-scope",
+      "request": {
+        "action_id": "recovery-plan-001",
+        "scope": "draft",
+        "data": "internal",
+        "impact": "high",
+        "owner": "program-lead",
+        "context_version": "context-1",
+        "policy_version": "policy-1",
+        "identity_bound": true,
+        "evidence": {
+          "source_timestamp": "2026-11-02T11:50:00Z",
+          "rationale": "A synthetic supplier date changed."
+        }
+      },
+      "expected": "blocked"
+    },
+    {
+      "id": "unknown-scope",
+      "request": {
+        "action_id": "recovery-plan-001",
+        "scope": "unlimited",
+        "data": "internal",
+        "impact": "low",
+        "owner": "program-lead",
+        "context_version": "context-1",
+        "policy_version": "policy-1",
+        "identity_bound": true,
+        "evidence": {
+          "source_timestamp": "2026-11-02T11:50:00Z",
+          "rationale": "A synthetic supplier date changed."
+        }
+      },
+      "expected": "blocked"
+    },
+    {
+      "id": "unknown-data-class",
+      "request": {
+        "action_id": "recovery-plan-001",
+        "scope": "draft",
+        "data": "unknown",
+        "impact": "low",
+        "owner": "program-lead",
+        "context_version": "context-1",
+        "policy_version": "policy-1",
+        "identity_bound": true,
+        "evidence": {
+          "source_timestamp": "2026-11-02T11:50:00Z",
+          "rationale": "A synthetic supplier date changed."
+        }
+      },
+      "expected": "blocked"
+    },
+    {
+      "id": "unknown-impact",
+      "request": {
+        "action_id": "recovery-plan-001",
+        "scope": "draft",
+        "data": "internal",
+        "impact": "unknown",
+        "owner": "program-lead",
+        "context_version": "context-1",
+        "policy_version": "policy-1",
+        "identity_bound": true,
+        "evidence": {
+          "source_timestamp": "2026-11-02T11:50:00Z",
+          "rationale": "A synthetic supplier date changed."
+        }
+      },
+      "expected": "blocked"
+    },
+    {
+      "id": "missing-owner",
+      "request": {
+        "action_id": "recovery-plan-001",
+        "scope": "draft",
+        "data": "internal",
+        "impact": "low",
+        "owner": "",
+        "context_version": "context-1",
+        "policy_version": "policy-1",
+        "identity_bound": true,
+        "evidence": {
+          "source_timestamp": "2026-11-02T11:50:00Z",
+          "rationale": "A synthetic supplier date changed."
+        }
+      },
+      "expected": "blocked"
+    },
+    {
+      "id": "missing-action-id",
+      "request": {
+        "action_id": "",
+        "scope": "draft",
+        "data": "internal",
+        "impact": "low",
+        "owner": "program-lead",
+        "context_version": "context-1",
+        "policy_version": "policy-1",
+        "identity_bound": true,
+        "evidence": {
+          "source_timestamp": "2026-11-02T11:50:00Z",
+          "rationale": "A synthetic supplier date changed."
+        }
+      },
+      "expected": "blocked"
+    },
+    {
+      "id": "missing-version",
+      "request": {
+        "action_id": "recovery-plan-001",
+        "scope": "draft",
+        "data": "internal",
+        "impact": "low",
+        "owner": "program-lead",
+        "context_version": "context-1",
+        "policy_version": "",
+        "identity_bound": true,
+        "evidence": {
+          "source_timestamp": "2026-11-02T11:50:00Z",
+          "rationale": "A synthetic supplier date changed."
+        }
+      },
+      "expected": "blocked"
+    },
+    {
+      "id": "unbound-identity",
+      "request": {
+        "action_id": "recovery-plan-001",
+        "scope": "draft",
+        "data": "internal",
+        "impact": "low",
+        "owner": "program-lead",
+        "context_version": "context-1",
+        "policy_version": "policy-1",
+        "identity_bound": false,
+        "evidence": {
+          "source_timestamp": "2026-11-02T11:50:00Z",
+          "rationale": "A synthetic supplier date changed."
+        }
+      },
+      "expected": "blocked"
+    },
+    {
+      "id": "missing-rationale",
+      "request": {
+        "action_id": "recovery-plan-001",
+        "scope": "draft",
+        "data": "internal",
+        "impact": "low",
+        "owner": "program-lead",
+        "context_version": "context-1",
+        "policy_version": "policy-1",
+        "identity_bound": true,
+        "evidence": {
+          "source_timestamp": "2026-11-02T11:50:00Z"
+        }
+      },
+      "expected": "blocked"
+    },
+    {
+      "id": "missing-source-time",
+      "request": {
+        "action_id": "recovery-plan-001",
+        "scope": "draft",
+        "data": "internal",
+        "impact": "low",
+        "owner": "program-lead",
+        "context_version": "context-1",
+        "policy_version": "policy-1",
+        "identity_bound": true,
+        "evidence": {
+          "rationale": "A synthetic change"
+        }
+      },
+      "expected": "blocked"
+    },
+    {
+      "id": "stop-condition-raised",
+      "request": {
+        "action_id": "recovery-plan-001",
+        "scope": "draft",
+        "data": "internal",
+        "impact": "low",
+        "owner": "program-lead",
+        "context_version": "context-1",
+        "policy_version": "policy-1",
+        "identity_bound": true,
+        "evidence": {
+          "source_timestamp": "2026-11-02T11:50:00Z",
+          "rationale": "A synthetic supplier date changed."
+        },
+        "stop_requested": true
+      },
+      "expected": "blocked"
+    },
+    {
+      "id": "wrong-action",
+      "request": {
+        "action_id": "recovery-plan-001",
+        "scope": "internal",
+        "data": "internal",
+        "impact": "low",
+        "owner": "program-lead",
+        "context_version": "context-1",
+        "policy_version": "policy-1",
+        "identity_bound": true,
+        "evidence": {
+          "source_timestamp": "2026-11-02T11:50:00Z",
+          "rationale": "A synthetic supplier date changed."
+        }
+      },
+      "expected": "approval_required",
+      "approval": {
+        "action_id": "other-action",
+        "context_version": "context-1",
+        "policy_version": "policy-1",
+        "approver": "program-lead",
+        "decision": "approve",
+        "expires_at": "2026-11-02T13:00:00Z"
+      }
+    },
+    {
+      "id": "changed-context",
+      "request": {
+        "action_id": "recovery-plan-001",
+        "scope": "internal",
+        "data": "internal",
+        "impact": "low",
+        "owner": "program-lead",
+        "context_version": "context-1",
+        "policy_version": "policy-1",
+        "identity_bound": true,
+        "evidence": {
+          "source_timestamp": "2026-11-02T11:50:00Z",
+          "rationale": "A synthetic supplier date changed."
+        }
+      },
+      "expected": "approval_required",
+      "approval": {
+        "action_id": "recovery-plan-001",
+        "context_version": "context-2",
+        "policy_version": "policy-1",
+        "approver": "program-lead",
+        "decision": "approve",
+        "expires_at": "2026-11-02T13:00:00Z"
+      }
+    },
+    {
+      "id": "changed-policy",
+      "request": {
+        "action_id": "recovery-plan-001",
+        "scope": "internal",
+        "data": "internal",
+        "impact": "low",
+        "owner": "program-lead",
+        "context_version": "context-1",
+        "policy_version": "policy-1",
+        "identity_bound": true,
+        "evidence": {
+          "source_timestamp": "2026-11-02T11:50:00Z",
+          "rationale": "A synthetic supplier date changed."
+        }
+      },
+      "expected": "approval_required",
+      "approval": {
+        "action_id": "recovery-plan-001",
+        "context_version": "context-1",
+        "policy_version": "policy-2",
+        "approver": "program-lead",
+        "decision": "approve",
+        "expires_at": "2026-11-02T13:00:00Z"
+      }
+    },
+    {
+      "id": "wrong-approver",
+      "request": {
+        "action_id": "recovery-plan-001",
+        "scope": "internal",
+        "data": "internal",
+        "impact": "low",
+        "owner": "program-lead",
+        "context_version": "context-1",
+        "policy_version": "policy-1",
+        "identity_bound": true,
+        "evidence": {
+          "source_timestamp": "2026-11-02T11:50:00Z",
+          "rationale": "A synthetic supplier date changed."
+        }
+      },
+      "expected": "approval_required",
+      "approval": {
+        "action_id": "recovery-plan-001",
+        "context_version": "context-1",
+        "policy_version": "policy-1",
+        "approver": "another-person",
+        "decision": "approve",
+        "expires_at": "2026-11-02T13:00:00Z"
+      }
+    },
+    {
+      "id": "expired-approval",
+      "request": {
+        "action_id": "recovery-plan-001",
+        "scope": "internal",
+        "data": "internal",
+        "impact": "low",
+        "owner": "program-lead",
+        "context_version": "context-1",
+        "policy_version": "policy-1",
+        "identity_bound": true,
+        "evidence": {
+          "source_timestamp": "2026-11-02T11:50:00Z",
+          "rationale": "A synthetic supplier date changed."
+        }
+      },
+      "expected": "approval_required",
+      "approval": {
+        "action_id": "recovery-plan-001",
+        "context_version": "context-1",
+        "policy_version": "policy-1",
+        "approver": "program-lead",
+        "decision": "approve",
+        "expires_at": "2026-11-02T11:59:00Z"
+      }
+    },
+    {
+      "id": "invalid-expiration",
+      "request": {
+        "action_id": "recovery-plan-001",
+        "scope": "internal",
+        "data": "internal",
+        "impact": "low",
+        "owner": "program-lead",
+        "context_version": "context-1",
+        "policy_version": "policy-1",
+        "identity_bound": true,
+        "evidence": {
+          "source_timestamp": "2026-11-02T11:50:00Z",
+          "rationale": "A synthetic supplier date changed."
+        }
+      },
+      "expected": "approval_required",
+      "approval": {
+        "action_id": "recovery-plan-001",
+        "context_version": "context-1",
+        "policy_version": "policy-1",
+        "approver": "program-lead",
+        "decision": "approve",
+        "expires_at": "tomorrow"
+      }
+    },
+    {
+      "id": "timezone-missing",
+      "request": {
+        "action_id": "recovery-plan-001",
+        "scope": "internal",
+        "data": "internal",
+        "impact": "low",
+        "owner": "program-lead",
+        "context_version": "context-1",
+        "policy_version": "policy-1",
+        "identity_bound": true,
+        "evidence": {
+          "source_timestamp": "2026-11-02T11:50:00Z",
+          "rationale": "A synthetic supplier date changed."
+        }
+      },
+      "expected": "approval_required",
+      "approval": {
+        "action_id": "recovery-plan-001",
+        "context_version": "context-1",
+        "policy_version": "policy-1",
+        "approver": "program-lead",
+        "decision": "approve",
+        "expires_at": "2026-11-02T13:00:00"
+      }
+    },
+    {
+      "id": "human-rejection",
+      "request": {
+        "action_id": "recovery-plan-001",
+        "scope": "internal",
+        "data": "internal",
+        "impact": "low",
+        "owner": "program-lead",
+        "context_version": "context-1",
+        "policy_version": "policy-1",
+        "identity_bound": true,
+        "evidence": {
+          "source_timestamp": "2026-11-02T11:50:00Z",
+          "rationale": "A synthetic supplier date changed."
+        }
+      },
+      "expected": "blocked",
+      "approval": {
+        "action_id": "recovery-plan-001",
+        "context_version": "context-1",
+        "policy_version": "policy-1",
+        "approver": "program-lead",
+        "decision": "reject",
+        "expires_at": "2026-11-02T13:00:00Z"
+      }
+    }
+  ]
+}

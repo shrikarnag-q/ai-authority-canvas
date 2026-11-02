@@ -1,0 +1,60 @@
+{
+  "status": "uncompleted_template",
+  "artifact": {
+    "name": "AI Authority Canvas",
+    "reference_version": "1.0",
+    "source_commit": null,
+    "reviewed_url": null
+  },
+  "review_date": null,
+  "reviewer": {
+    "name": null,
+    "role": null,
+    "affiliation": null,
+    "relationship_to_author": null,
+    "compensation": null
+  },
+  "cases": [
+    {
+      "case": "A",
+      "before_tool_interpretation": null,
+      "after_tool_interpretation": null,
+      "concrete_problem": null,
+      "suggested_correction": null
+    },
+    {
+      "case": "B",
+      "before_tool_interpretation": null,
+      "after_tool_interpretation": null,
+      "concrete_problem": null,
+      "suggested_correction": null
+    },
+    {
+      "case": "C",
+      "before_tool_interpretation": null,
+      "after_tool_interpretation": null,
+      "concrete_problem": null,
+      "suggested_correction": null
+    },
+    {
+      "case": "D",
+      "before_tool_interpretation": null,
+      "after_tool_interpretation": null,
+      "concrete_problem": null,
+      "suggested_correction": null
+    }
+  ],
+  "understands_planning_only_limit": null,
+  "unresolved_questions": [],
+  "publication_permission": {
+    "granted": false,
+    "exact_approved_quote": null,
+    "name_and_affiliation_allowed": false,
+    "permission_record": null
+  },
+  "owner_response": {
+    "changes_made": [],
+    "release_commit": null,
+    "unresolved_criticism": []
+  }
+}
